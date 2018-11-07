@@ -5,7 +5,7 @@
 
 $(function() {
   console.log('content-script.js run');
-  injectCustomJs('lib/js/inject.js');
+  injectCustomJs('js/inject.js');
 });
 
 function injectCustomJs(jsPath)
@@ -23,3 +23,22 @@ function injectCustomJs(jsPath)
     };
     document.head.appendChild(temp);
 }
+
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse)
+{
+    // console.log(sender.tab ?"from a content script:" + sender.tab.url :"from the extension");
+    if(request.cmd == 'popup-msg-test') console.log('popup-msg: ' + request.value);
+    if(request.cmd == 'bg-msg-test') console.log('bg-msg: ' + request.value);
+    sendResponse('got it!');
+});
+
+chrome.runtime.sendMessage({greeting: 'this is content-script.js'}, function(response) {
+    console.log('get response: ' + response);
+});
+
+// receive message from 'inject.js'
+window.addEventListener("message", function(e)
+{
+  if('inject_msg_test' in e.data)
+    console.log('content-script get msg: ' + e.data.inject_msg_test);
+}, false);
