@@ -4,4 +4,4 @@ console.log("inject.js run");
 // $('body').css('background', '#000');
 
 // send message to 'content-script.js'
-window.postMessage({'inject_msg_test': 'this is inject.js'}, '*');
+// window.postMessage({'inject_msg_test': 'this is inject.js'}, '*');

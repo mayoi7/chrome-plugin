@@ -27,12 +27,12 @@ function testByPop() {
 }
 
 // access popup page
-var views = chrome.extension.getViews({type:'popup'});
-if(views.length > 0) {
-    console.log(views[0].location.href);
-} else {
-  console.log("ERROR: get popup failed");
-}
+// var views = chrome.extension.getViews({type:'popup'});
+// if(views.length > 0) {
+//     console.log(views[0].location.href);
+// } else {
+//   console.log("ERROR: get popup failed");
+// }
 
 // send msg to content-script.js
 // wrong!
