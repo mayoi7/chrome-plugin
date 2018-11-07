@@ -16,9 +16,12 @@
       "default_popup": "html/popup.html"
   },
   "permissions": [
+    "tabs",
     "declarativeContent",
     "storage",
-    "contextMenus"
+    "contextMenus",
+    "https://*/*",
+    "http://*/*"
   ],
   "content_scripts":
    [

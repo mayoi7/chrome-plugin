@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 chrome.runtime.onInstalled.addListener(function(){
     chrome.declarativeContent.onPageChanged.removeRules(undefined, function(){
         chrome.declarativeContent.onPageChanged.addRules([
@@ -53,9 +55,40 @@ function testByPop() {
 
 // listen request from content-script.js
 // WARNING: only one could send callback message to content-script.js
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse)
-{
-    console.log('background.js get message from content-script');
-    console.log(request, sender, sendResponse);
-    sendResponse('background.js got message: ' + JSON.stringify(request));
-});
+// chrome.runtime.onMessage.addListener(function(request, sender, sendResponse)
+// {
+//     console.log('background.js get message from content-script');
+//     console.log(request, sender, sendResponse);
+//     sendResponse('background.js got message: ' + JSON.stringify(request));
+// });
+
+// let tabId = null;
+// chrome.windows.getCurrent(function(currentWindow)
+// {
+//   tabId = currentWindow.id;
+//   console.log('tabId: ' + currentWindow.id);
+// });
+
+// dynamic js injection
+// chrome.tabs.executeScript cannot be used anymore, details in url below
+// http://www.itkeyword.com/doc/8573177962004958x711/chrome-tabs-executescript-cannot-access-a-chrome-url
+// chrome.tabs.executeScript(tabId, {code: 'document.body.style.backgroundColor="red"'}, _=>{
+//   let e = chrome.runtime.lastError;
+//   if(e !== undefined) {
+//     console.log(tabId, _, e);
+//   }
+// });
+
+// dynamic js injection
+// new way to inject js code
+// CARE: codes below only could control 'DOM' of 'background'
+//       if u want to control 'DOM' of target page,
+//       u should write these code in 'content-script.js'
+// chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
+//   //code in here will run every time a user goes onto a new tab,
+//   // so you can insert your scripts into every new tab
+//   console.log('js code be injected');
+//   if (changeInfo.status == "complete") {  // when page is completely loaded
+//     document.body.style.background = "#000";
+//   }
+// });

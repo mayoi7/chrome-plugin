@@ -37,3 +37,12 @@ var bg = chrome.extension.getBackgroundPage();
 //     port.postMessage({'qst': 'q3'});
 //   });
 // });
+
+// dynamic js injection
+// statements below ONLY run after aim page refresh
+chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
+  //code in here will run every time a user goes onto a new tab,
+  // so you can insert your scripts into every new tab
+  console.log('js code be injected');
+  document.body.style.background = "#000";
+});
