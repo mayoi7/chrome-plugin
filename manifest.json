@@ -23,6 +23,7 @@
     "storage",
     "notifications",
     "contextMenus",
+    "activeTab",
     "https://*/*",
     "http://*/*"
   ],

@@ -48,11 +48,11 @@ var bg = chrome.extension.getBackgroundPage();
 // });
 
 // dynamic js injection
-chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-      chrome.tabs.executeScript(
-          tabs[0].id,
-          {code: 'document.body.style.backgroundColor =  "#000";'});
-});
+// chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+//       chrome.tabs.executeScript(
+//           tabs[0].id,
+//           {code: 'document.body.style.backgroundColor =  "#000";'});
+// });
 
 // get current window id
 // chrome.windows.getCurrent(function(currentWindow)
