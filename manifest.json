@@ -17,7 +17,6 @@
   },
   "permissions": [
     "tabs",
-    "webRequest",
     "webRequestBlocking",
     "declarativeContent",
     "storage",
@@ -37,12 +36,16 @@
    ],
    "background":
    {
-     "scripts": ["lib/jquery-min-1.12.4.js", "js/background.js"]
+     "scripts": ["lib/jquery-min-1.12.4.js", "js/background.js"],
+     "persistent": false
    },
    "web_accessible_resources": ["js/inject.js"],
    "options_ui":
    {
        "page": "html/options.html",
        "chrome_style": true
+   },
+   "chrome_url_overrides": {
+     "newtab": "html/newtab.html"
    }
 }

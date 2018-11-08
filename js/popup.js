@@ -1,5 +1,5 @@
 /*jshint esversion: 6 */
-var bg = chrome.extension.getBackgroundPage();
+// var bg = chrome.extension.getBackgroundPage();
 // bg.testByPop(); // will appear before page ;
 
 // send msg to content-script.js
