@@ -47,6 +47,13 @@ var bg = chrome.extension.getBackgroundPage();
 //   document.body.style.background = "#000";
 // });
 
+// dynamic js injection
+chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+      chrome.tabs.executeScript(
+          tabs[0].id,
+          {code: 'document.body.style.backgroundColor =  "#000";'});
+});
+
 // get current window id
 // chrome.windows.getCurrent(function(currentWindow)
 // {

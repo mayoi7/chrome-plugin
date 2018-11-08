@@ -70,8 +70,6 @@ function testByPop() {
 // });
 
 // dynamic js injection
-// chrome.tabs.executeScript cannot be used anymore, details in url below
-// http://www.itkeyword.com/doc/8573177962004958x711/chrome-tabs-executescript-cannot-access-a-chrome-url
 // chrome.tabs.executeScript(tabId, {code: 'document.body.style.backgroundColor="red"'}, _=>{
 //   let e = chrome.runtime.lastError;
 //   if(e !== undefined) {
