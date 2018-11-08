@@ -92,3 +92,21 @@ function testByPop() {
 //     document.body.style.background = "#000";
 //   }
 // });
+
+// save props
+// chrome.storage.sync.set({color: 'green'}, function() {
+//     console.log('save suceess');
+// });
+
+// web request
+// chrome.webRequest.onBeforeRequest.addListener(details => {
+//
+//     if(details.type == 'image') {
+//         chrome.notifications.create(null, {
+//             type: 'basic',
+//             iconUrl: 'images/icon.png',
+//             title: 'image found',
+//             message: 'image url: ' + details.url,
+//         });
+//     }
+// }, {urls: ["<all_urls>"]}, ["blocking"]);

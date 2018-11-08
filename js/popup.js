@@ -40,9 +40,24 @@ var bg = chrome.extension.getBackgroundPage();
 
 // dynamic js injection
 // statements below ONLY run after aim page refresh
-chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
-  //code in here will run every time a user goes onto a new tab,
-  // so you can insert your scripts into every new tab
-  console.log('js code be injected');
-  document.body.style.background = "#000";
-});
+// chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
+//   //code in here will run every time a user goes onto a new tab,
+//   // so you can insert your scripts into every new tab
+//   console.log('js code be injected');
+//   document.body.style.background = "#000";
+// });
+
+// get current window id
+// chrome.windows.getCurrent(function(currentWindow)
+// {
+//     console.log('当前窗口ID：' + currentWindow.id);
+// });
+
+// get current tab id
+// function getCurrentTabId(callback)
+// {
+//     chrome.tabs.query({active: true, currentWindow: true}, function(tabs)
+//     {
+//         if(callback) callback(tabs.length ? tabs[0].id: null);
+//     });
+// }

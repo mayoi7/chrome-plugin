@@ -17,8 +17,11 @@
   },
   "permissions": [
     "tabs",
+    "webRequest",
+    "webRequestBlocking",
     "declarativeContent",
     "storage",
+    "notifications",
     "contextMenus",
     "https://*/*",
     "http://*/*"

@@ -50,3 +50,9 @@ function injectCustomJs(jsPath)
 // port.onMessage.addListener((msg) => {
 //   console.log('content-script get msg: ' + msg);
 // });
+
+// get props saved in 'background.js'
+// first param is default value
+// chrome.storage.sync.get({color: 'red', age: 18}, function(items) {
+//     console.log(items.color, items.age);
+// });
